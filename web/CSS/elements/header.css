@@ -1,0 +1,89 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--gris-suave);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;          
+    z-index: 1000;
+    gap: 1rem;
+    height: 64px;              
+    box-sizing: border-box;
+}
+
+header .name {
+    display: flex;             /* make it a flex container */
+    align-items: center;       /* vertically center the images */
+    gap: 40px;                
+    margin: 0;
+}
+
+header .name img {
+    margin-top: 2px;
+    max-height: 30px; 
+    width: auto; 
+}
+
+/* ==== NAV ==== */
+
+nav {
+  display: flex;
+  gap: 20px;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding-bottom: 4px; /* espacio para la barrita */
+  transition: color 0.3s ease;
+}
+
+/* barrita azul */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--azul-principal, #33aaff);
+  transition: width 0.3s ease;
+}
+
+/* hover y enlace activo */
+nav a:hover,
+nav a.active {
+  color: var(--azul-principal, #33aaff);
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    nav a { font-size: 0.9rem; }
+}
+
+@media (max-width: 640px) {
+    nav, .header-logo { 
+        display: none; 
+    }
+    header { 
+        justify-content: center; 
+    }
+    header img.name { 
+        max-height: 56px; 
+    }
+}

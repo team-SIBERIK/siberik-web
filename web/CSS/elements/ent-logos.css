@@ -1,0 +1,25 @@
+.ia-logos {
+    display: flex;
+    flex-wrap: wrap;          
+    justify-content: center;  
+    align-items: center;
+    gap: 1.5rem;              
+    width: 100%;              
+    margin-top: 1rem;
+    box-sizing: border-box;   
+}
+
+.ia-logos a {
+    display: inline-block;    
+}
+
+.ia-logo {
+    max-height: 50px;          
+    width: auto;               
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.ia-logo:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}

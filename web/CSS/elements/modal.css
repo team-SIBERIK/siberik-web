@@ -1,0 +1,235 @@
+/* =============================
+   MODALS WITH ANIMATIONS
+============================= */
+
+.fade-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 9;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.fade-background.show {
+    display: block;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+/* ==================
+        MODAL
+=================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    top: 370px;
+    transform: translate(-50%, -50%) scale(0.95);
+    background: #fff;
+    width: 90%;
+    max-width: 500px;
+
+    max-height: 500px; 
+    overflow-y: auto;  
+
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* Destroy scrollbar in Webkit (Chrome, Edge, Safari) */
+.modal::-webkit-scrollbar {
+    display: none;
+}
+
+/* Destroy scrollbar in Firefox */
+.modal {
+    scrollbar-width: none;
+}
+
+/* Destroy scrollbar in edge and old navs */
+.modal {
+    -ms-overflow-style: none;
+}
+
+/* MODAL CONTENT */
+.modal-content {
+    padding: 30px 25px;
+    text-align: center;
+    position: relative;
+    overflow: visible;     /* quitamos scroll interno */
+    max-height: none;      /* quitamos límite interno */
+}
+
+/* Scrollbar styling opcional, ahora solo afecta al modal completo */
+.modal::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 10px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+/* Contenido interno */
+.modal-content h2 {
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #222;
+    border-left: none !important;
+}
+
+.modal-content p {
+    line-height: 1.6;
+    color: #444;
+}
+
+/* =============================
+   SOCIALS
+============================= */
+.socials {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.socials a img {
+    width: 28px; 
+    height: 28px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(40%) brightness(0.9);
+}
+
+.socials a img:hover {
+    transform: scale(1.15);
+    filter: grayscale(0%) brightness(1);
+}
+
+/* =============================
+   PROFILE BANNER (Modal)
+============================= */
+
+.profile-banner {
+    position: relative;
+    z-index: 8;
+    width: 100%;
+    height: 140px;
+    background: linear-gradient(135deg, #a3b9ff, #e6ecff);
+    border-radius: 12px 12px 0 0;
+    margin-bottom: 60px;
+}
+
+/* Circular photo */
+.profile-pic {
+    position: absolute;
+    z-index: 20; 
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: translateX(-50%) translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* CLOSE BUTTON */
+.close {
+    position: absolute;
+    z-index: 25;
+    top: 0px;
+    right: 8px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.2s ease;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* =============================
+   ANIMATIONS
+============================= */
+@keyframes fadeInBackground {
+    from { opacity: 0; background-color: rgba(0,0,0,0); }
+    to { opacity: 1; background-color: rgba(0,0,0,0.6); }
+}
+
+@keyframes slideUpModal {
+    from { opacity: 0; transform: translate(-50%, 30%) scale(0.95); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.modal.show {
+    animation: slideUpModal 0.4s ease forwards;
+}
+
+.fade-background.show {
+    animation: fadeInBackground 0.4s ease forwards;
+}
+
+/* CLOSE MODAL ANIMATIONS */
+@keyframes slideDownModal {
+    from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    to { opacity: 0; transform: translate(-50%, 30%) scale(0.95); }
+}
+
+@keyframes fadeOutBackground {
+    from { opacity: 1; background-color: rgba(0,0,0,0.6); }
+    to { opacity: 0; background-color: rgba(0,0,0,0); }
+}
+
+.modal.closing {
+    animation: slideDownModal 0.4s ease forwards;
+}
+
+.fade-background.closing {
+    animation: fadeOutBackground 0.4s ease forwards;
+}
+
+/* =============================
+    RESPONSIVE
+============================= */
+
+@media (max-height: 700px) {
+    .modal {
+        top: 330px;
+        max-height: 450px;
+    }
+}
+
+@media (max-height: 600px) {
+    .modal {
+        top: 290px;
+        max-height: 400px;
+    }
+}

@@ -1,0 +1,114 @@
+
+#main-content {
+    display: none;
+    opacity: 0;
+    transition: opacity var(--transicion);
+    padding: 30px 20px 30px 20px;
+
+    position: relative; 
+    z-index: 1;
+}
+
+section {
+    background-color: rgb(240, 240, 240, 0.3);
+    border-radius: 15px;
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 30px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+}
+
+section:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
+}
+
+
+section h2 {
+    color: var(--azul-principal);
+    border-left: 4px solid var(--azul-principal);
+    padding-left: 10px;
+    margin-bottom: 30px;
+}
+
+/* FIRST SECTION: FOUNDERS */
+
+.founders-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.founders-buttons .boton {
+    width: 40%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+.profile {
+    max-width: 600px;
+    margin: 1rem auto;
+    text-align: justify;
+    line-height: 1.6;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    padding: 1rem;
+    animation: fadeIn 0.4s ease-in-out;
+
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+    transition: all 0.5s ease;
+}
+
+.profile.show {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+}
+
+.profile:not(.show) {
+    pointer-events: none; 
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-5px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* LAST SECTION */
+
+.last {
+    margin-bottom: 0;
+}
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 1300px) {
+    section {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 900px) {
+    section {
+        margin: 60px auto;
+        max-width: 800px;
+    }
+    .founders-buttons .boton {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {            
+    .main-content {
+        padding: 30px 10px 0 10px;
+        font-size: 12px;
+    }
+    section {
+        padding: 20px;
+    }
+}

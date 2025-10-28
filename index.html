@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<link rel="icon" type="image/png" href="web/assets/SIBERIK.png">
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>SIBERIK | Inteligencia y Creatividad</title>
+
+	<link rel="stylesheet" href="web/CSS/elements/header.css"/>
+	<link rel="stylesheet" href="web/CSS/elements/footer.css"/>
+	<link rel="stylesheet" href="web/CSS/elements/modal.css"/>
+	<link rel="stylesheet" href="web/CSS/elements/carrousel.css"/>
+	<link rel="stylesheet" href="web/CSS/elements/ent-logos.css"/>
+	
+	<link rel="stylesheet" href="web/CSS/main-content.css"/>
+	<link rel="stylesheet" href="web/CSS/general.css"/>
+</head>
+<body>
+	<canvas id="hero-background"></canvas>
+	<!-- INTRO -->
+	<div id="intro">
+		<img src="web/assets/SIBERIK/SIBERIK.png" alt="Logo Siberik" class="intro-logo"/>
+		<img src="web/assets/SIBERIK/NAME.png" alt="SIBERIK name" class="intro-name"/>
+		<p>Inteligencia y Creatividad para un mundo conectado</p>
+		<div class="buttons">
+			<button class="boton" id="btnKnowUs">Conócenos</button>
+			<button class="boton" id="btnContactUs">Contáctanos</button>
+		</div>
+	</div>
+
+	<!-- CONTENIDO PRINCIPAL -->
+	<div id="main-content">
+		<header>
+			<div class="name">	
+				<img src="web/assets/SIBERIK/SIBERIK.png" alt="Logo Siberik" class="header-logo"/>
+				<img src="web/assets/SIBERIK/NAME.png" alt="SIBERIK name"/>
+			</div>
+			<nav>
+				<a href="#quienes" class="nav-link">Quienes somos</a>
+				<a href="#servicios" class="nav-link">Servicios</a>
+				<a href="#proyectos" class="nav-link">Proyectos</a>
+				<a href="#contacto" class="nav-link">Contacto</a>
+			</nav>
+		</header>
+
+		<main>
+			<section id="quienes">
+				<h2>Quiénes Somos</h2>
+				<p>
+					Siberik es una empresa que une ingeniería de datos, inteligencia artificial 
+					y producción audiovisual para crear soluciones innovadoras que combinan 
+					tecnología y creatividad. Fundada por Mike y Rodrigo, nuestro objetivo es 
+					transformar ideas en experiencias reales, éticas y sostenibles.
+				</p>
+
+				<div class="founders-buttons">
+					<button class="founder-btn boton" data-target="mikeModal">Mike</button>
+					<button class="founder-btn boton" data-target="rodrigoModal">Rodrigo</button>
+				</div>
+
+				<!-- Dark Background -->
+				<div id="fadeBackground" class="fade-background"></div>
+
+				<!-- Modal: Mike -->
+				<div id="mikeModal" class="modal">
+					<div class="modal-content">
+						<span class="close" onclick="closeModal('mikeModal')">&times;</span>
+						<div class="profile-banner">
+							<img src="web/assets/Mike/personal/prof_pic.png" alt="Foto de Mike" class="profile-pic">
+						</div>
+						<h2>Mike</h2>
+						<div class="socials">
+							<a href="https://github.com/Mikemaranon" target="_blank" aria-label="GitHub">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+							</a>
+							<a href="https://www.linkedin.com/in/mikemaranon" target="_blank" aria-label="LinkedIn">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+							</a>
+						</div>
+						<p>
+							Ingeniero de datos con experiencia en sistemas, cloud y programación 
+							(Java, Python, JavaScript, C, etc.). Mike combina su pasión por la 
+							tecnología con la música moderna, aportando un enfoque creativo a 
+							cada proyecto de IA y automatización que desarrolla.
+						</p>
+						<div class="carousel">
+							<button class="carousel-btn prev">&#10094;</button>
+
+							<div class="carousel-track">
+								<img src="web/assets/Mike/personal/music-01.jpeg" alt="18th birthday concert">
+								<img src="web/assets/Mike/personal/music-05.jpeg" alt="2024 concert">
+								<img src="web/assets/Mike/personal/POLAR.AI.png" alt="POLAR.AI project">
+							</div>
+
+							<button class="carousel-btn next">&#10095;</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- Modal: Rodrigo -->
+				<div id="rodrigoModal" class="modal">
+					<div class="modal-content">
+						<span class="close" onclick="closeModal('rodrigoModal')">&times;</span>
+						<div class="profile-banner">
+							<img src="web/assets/Dro/personal/prof_pic.png" alt="Foto de Rodrigo" class="profile-pic">
+						</div>
+						<h2>Rodrigo</h2>
+						<div class="socials">
+							<a href="https://github.com/" target="_blank" aria-label="GitHub">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+							</a>
+							<a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+							</a>
+						</div>
+						<p>
+							Escenógrafo y especialista audiovisual, experto en montaje, fotografía 
+							y producción de contenido creativo. Músico clásico profesional, Rodrigo 
+							aporta sensibilidad artística y visión estética, asegurando que cada 
+							proyecto audiovisual de Siberik tenga impacto y calidad.
+						</p>
+						<div class="carousel">
+							<button class="carousel-btn prev">&#10094;</button>
+
+							<div class="carousel-track">
+								<img src="web/assets/Dro/personal/img_1.JPG" alt="img 1">
+								<img src="web/assets/Dro/personal/img_2.JPG" alt="img 2">
+								<img src="web/assets/Dro/personal/catedral.jpg" alt="Catedral">
+							</div>
+
+							<button class="carousel-btn next">&#10095;</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="servicios">
+				<h2>Servicios</h2>
+				<p>
+					En Siberik ofrecemos soluciones que combinan tecnología y creatividad, 
+					orientadas a sectores como empresas tecnológicas, productoras audiovisuales, 
+					proyectos musicales, desarrollo de videojuegos y cualquier iniciativa que 
+					busque innovación y calidad en su contenido y procesos.
+				</p>
+
+				<div class="servicio">
+					<h3> ▶ Consultoría en Inteligencia Artificial</h3>
+					<p>
+						Ofrecemos soluciones personalizadas de IA, desde automatización 
+						de procesos hasta análisis avanzado de datos. Nuestro enfoque permite 
+						a las empresas optimizar recursos, mejorar la toma de decisiones y 
+						explorar nuevas oportunidades de innovación tecnológica con un soporte 
+						completo y confiable.
+					</p><br>
+					<div class="ia-logos">
+						<a href="https://azure.microsoft.com" target="_blank" rel="noopener noreferrer">
+							<img src="web/assets/Mike/logos/azure.png" alt="Azure Logo" class="ia-logo"/>
+						</a>
+						<a href="https://openai.com" target="_blank" rel="noopener noreferrer">
+							<img src="web/assets/Mike/logos/openai.png" alt="OpenAI Logo" class="ia-logo"/>
+						</a>
+						<a href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer">
+							<img src="web/assets/Mike/logos/copilot.png" alt="Copilot Logo" class="ia-logo"/>
+						</a>
+						<a href="https://aistudio.google.com/welcome" target="_blank" rel="noopener noreferrer">
+							<img src="web/assets/Mike/logos/gemini.png" alt="Gemini Logo" class="ia-logo"/>
+						</a>
+						<a href="https://deepseek.com/en" target="_blank" rel="noopener noreferrer">
+							<img src="web/assets/Mike/logos/deepseek.png" alt="DeepSeek Logo" class="ia-logo"/>
+						</a>
+						<a href="https://www.tensorflow.org" target="_blank" rel="noopener noreferrer">
+							<img src="web/assets/Mike/logos/tensorflow.png" alt="TensorFlow Logo" class="ia-logo"/>
+						</a>
+						<a href="https://www.docker.com" target="_blank" rel="noopener noreferrer">
+							<img src="web/assets/Mike/logos/docker.png" alt="Docker Logo" class="ia-logo"/>
+						</a>
+					</div><br>
+				</div>
+
+				<div class="servicio">
+					<h3> ▶ Producción Audiovisual</h3>
+					<p>
+						Brindamos servicios profesionales de fotografía, vídeo, música, 
+						dirección y escenografía. Combinamos creatividad y técnica para 
+						generar contenido audiovisual impactante y de alta calidad, 
+						adaptado a las necesidades de marcas, proyectos artísticos o iniciativas 
+						creativas que buscan destacar en su sector.
+					</p>
+					<br>
+					<div class="ia-logos">
+						<a href="https://www.adobe.com/products/premiere.html" target="_blank" rel="noopener noreferrer">
+							<img src="web/assets/Dro/logos/premiere.png" alt="Adobe Premiere Logo" class="ia-logo"/>
+						</a>
+						<a href="https://www.adobe.com/products/aftereffects.html" target="_blank" rel="noopener noreferrer">
+							<img src="web/assets/Dro/logos/aftereffects.png" alt="After Effects Logo" class="ia-logo"/>
+						</a>
+						<a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" rel="noopener noreferrer">
+							<img src="web/assets/Dro/logos/davinci.png" alt="DaVinci Resolve Logo" class="ia-logo"/>
+						</a>
+						<a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener noreferrer">
+							<img src="web/assets/Dro/logos/photoshop.png" alt="Photoshop Logo" class="ia-logo"/>
+						</a>
+						<a href="https://www.capcut.com" target="_blank" rel="noopener noreferrer">
+							<img src="web/assets/Dro/logos/capcut.png" alt="CapCut Logo" class="ia-logo"/>
+						</a>
+					</div><br>
+				</div>
+			</section>
+
+			<section id="proyectos">
+				<h2>Proyectos</h2>
+				<h3> ▶ Siberik Connect</h3>
+				<p>
+					Siberik Connect es una iniciativa sin ánimo de lucro diseñada para 
+					brindar apoyo a personas en momentos de vulnerabilidad emocional o 
+					riesgo de suicidio. La plataforma utiliza inteligencia artificial 
+					para ofrecer inspiración, consejos y posibles soluciones, y en situaciones 
+					críticas puede conectar a la persona con un usuario dispuesto a escuchar 
+					y brindar compañía.
+				</p>
+				<p>
+					Toda ayuda aportada se destina exclusivamente al mantenimiento de la 
+					plataforma o se dona a proyectos sociales de prevención del suicidio. 
+					SIBERIK no obtiene ningún beneficio económico de esta iniciativa.
+				</p>
+				<p>
+					Este proyecto refleja nuestro compromiso con la tecnología ética y con la 
+					creación de soluciones que realmente marcan la diferencia en la vida de 
+					las personas.
+				</p>
+				<br>
+				<button class="boton" onclick="window.open('https://team-siberik.github.io/siberik-connect', '_blank')">Apoya la causa</button>
+			</section>
+
+			<section id="contacto" class="last">
+				<h2>Contacto</h2>
+				<p>¿Tienes una idea? Escríbenos a <a href="mailto:team.siberik@gmail.com">team.siberik@gmail.com</a> o contáctanos en nuestras redes.</p>
+			</section>
+		</main>
+	</div>
+	<footer>
+		<img src="web/assets/SIBERIK/SIBERIK.png" alt="Siberik" style="width:40px; opacity:0.7;"/><br/>
+		<br>
+		© 2025 SIBERIK. Todos los derechos reservados.
+	</footer>
+	<script src="web/JS/index.js"></script>
+	<script src="web/JS/elements/carrousel.js"></script>
+	<script src="web/JS/elements/background.js"></script>
+	<script src="web/JS/elements/modal.js"></script>
+	<script src="web/JS/elements/header.js"></script>
+	<script src="web/JS/elements/section.js"></script>
+</body>
+</html>
