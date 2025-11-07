@@ -6,7 +6,7 @@ import os
 import sys
 
 # === SERVE IN SIBERIK REPO ===
-ROOT_DIR = "/home/mike/Desktop/codes/projects/_SIBERIK/Siberik-repo"
+ROOT_DIR = "/home/mike/Desktop/codes/projects/_SIBERIK/siberik-web"
 os.chdir(ROOT_DIR)
 
 # === PARAMS CONFIG ===
