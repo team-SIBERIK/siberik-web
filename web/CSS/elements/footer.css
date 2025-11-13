@@ -1,8 +1,7 @@
-
 footer {
     text-align: center;
     padding: 20px;
-    background-color: var(--gris-medio);
-    color: #666;
+    background-color: var(--surface-bg-color);
+    color: var(--text-secondary-color);
     font-size: 0.9rem;
 }

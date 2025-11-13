@@ -6,23 +6,43 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     const images = Array.from(track.children);
 
     let currentIndex = 0;
+    let autoSlide;
 
     function updateCarousel() {
         const width = track.clientWidth;
         track.style.transform = `translateX(-${currentIndex * width}px)`;
     }
 
-    prevBtn.addEventListener('click', () => {
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel();
+    }
+
+    function prevSlide() {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         updateCarousel();
+    }
+
+    // --- reset autoslide ---
+    function resetAutoSlide() {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(nextSlide, 5000);
+    }
+
+    // --- button listener ---
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoSlide();
     });
 
     nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateCarousel();
+        nextSlide();
+        resetAutoSlide();
     });
 
+    // --- Resize ---
     window.addEventListener('resize', updateCarousel);
 
-    setInterval(() => nextBtn.click(), 5000);
+    // --- Initial Auto-slide ---
+    resetAutoSlide();
 });

@@ -1,0 +1,29 @@
+:root {
+    /* ===== BACKGROUNDS ===== */
+    --main-bg-color: #f7f8fa;            /* fondo principal */
+    --surface-bg-color: rgba(230, 230, 230, 0.3);       /* tarjetas / sidebar / inputs */
+    --surface-alt-bg-color: #e5e7eb;     /* bordes suaves, hover */
+
+    --header-bg-color: #f3f3f3;          /* fondos de modales y popups */
+    
+    /* ===== TEXT ===== */
+    --text-primary-color: #1f2937;
+    --text-secondary-color: #6b7280;
+
+    --text-oposite-color: #f3f3f3;
+
+    /* ===== ACCENTS ===== */
+    --accent-color: #33aaff;             /* azul principal */
+    --accent-hover-color: #0b8de0;
+
+    --button-color: #0078d7;
+    --button-hover-color: #005fa3;
+    
+    /* ===== BORDERS & SHADOWS ===== */
+    --border-color: #e5e7eb;
+    --shadow-color: rgba(0,0,0,0.1);
+    --shadow-alt-color: rgba(0,0,0,0.05);
+
+    /* ===== SPECIAL ===== */
+    --overlay-color: rgba(0,0,0,0.4);
+}

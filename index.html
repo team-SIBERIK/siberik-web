@@ -14,6 +14,8 @@
 	
 	<link rel="stylesheet" href="web/CSS/main-content.css"/>
 	<link rel="stylesheet" href="web/CSS/general.css"/>
+
+	<link rel="stylesheet" href="web/CSS/themes/dark.css" id="theme-stylesheet"/>
 </head>
 <body>
 	<canvas id="hero-background"></canvas>
@@ -34,8 +36,17 @@
 			<div class="name">	
 				<img src="web/assets/SIBERIK/SIBERIK.png" alt="Logo Siberik" class="header-logo"/>
 				<img src="web/assets/SIBERIK/NAME.png" alt="SIBERIK name"/>
+				<button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+            		<!-- Theme Icon will be inserted here by JS -->
+        		</button>
 			</div>
-			<nav>
+
+			
+
+ 			<button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+            	<!-- Burguer Icon -->
+        	</button>
+			<nav id="main-nav">
 				<a href="#quienes" class="nav-link">Quienes somos</a>
 				<a href="#servicios" class="nav-link">Servicios</a>
 				<a href="#proyectos" class="nav-link">Proyectos</a>
@@ -83,17 +94,15 @@
 							tecnología con la música moderna, aportando un enfoque creativo a 
 							cada proyecto de IA y automatización que desarrolla.
 						</p>
-						<div class="carousel">
-							<button class="carousel-btn prev">&#10094;</button>
-
-							<div class="carousel-track">
-								<img src="web/assets/Mike/personal/music-01.jpeg" alt="18th birthday concert">
-								<img src="web/assets/Mike/personal/IMG_0380.JPG" alt="2025 concert">								
-								<img src="web/assets/Mike/personal/IMG_0381.JPG" alt="2025 concert">
-								<img src="web/assets/Mike/personal/POLAR.AI.png" alt="POLAR.AI project">
+						<div class="roles-container">
+							<h3>Roles</h3>
+							<div class="roles-list">
+								<div class="role-item">co-CEO</div>
+								<div class="role-item">CTO</div>
+								<div class="role-item">Ingeniero de datos</div>
+								<div class="role-item">Desarrollador de IA</div>
+								<div class="role-item">Desarrollador web</div>
 							</div>
-
-							<button class="carousel-btn next">&#10095;</button>
 						</div>
 					</div>
 				</div>
@@ -120,6 +129,16 @@
 							aporta sensibilidad artística y visión estética, asegurando que cada 
 							proyecto audiovisual de Siberik tenga impacto y calidad.
 						</p>
+						<div class="roles-container">
+							<h3>Roles</h3>
+							<div class="roles-list">
+								<div class="role-item">co-CEO</div>
+								<div class="role-item">CCO</div>
+								<div class="role-item">Escenógrafo</div>
+								<div class="role-item">Productor audiovisual</div>
+								<div class="role-item">Director de arte</div>
+							</div>
+						</div>
 						<div class="carousel">
 							<button class="carousel-btn prev">&#10094;</button>
 
@@ -237,6 +256,7 @@
 				<h2>Contacto</h2>
 				<p>¿Tienes una idea? Escríbenos a <a href="mailto:team.siberik@gmail.com">team.siberik@gmail.com</a> o contáctanos en nuestras redes.</p>
 			</section>
+			<br>
 		</main>
 	</div>
 	<footer>
@@ -245,6 +265,7 @@
 		© 2025 SIBERIK. Todos los derechos reservados.
 	</footer>
 	<script src="web/JS/index.js"></script>
+	<script src="web/JS/theme.js"></script>
 	<script src="web/JS/elements/carrousel.js"></script>
 	<script src="web/JS/elements/background.js"></script>
 	<script src="web/JS/elements/modal.js"></script>

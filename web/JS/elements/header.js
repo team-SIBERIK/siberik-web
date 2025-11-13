@@ -44,3 +44,39 @@ function scrollToWithOffset(selector) {
         behavior: 'smooth'
     });
 }
+
+function initHeaderMenu() {
+    const toggleBtn = document.getElementById("menu-toggle");
+    const nav = document.getElementById("main-nav");
+
+    if (!toggleBtn || !nav) {
+        console.error("Header initialization failed: missing DOM elements.");
+        return;
+    }
+
+    setupHeaderMenuEvents(toggleBtn, nav);
+}
+
+function setupHeaderMenuEvents(toggleBtn, nav) {
+    toggleBtn.addEventListener("click", (e) => handleMenuToggle(e, nav));
+    document.addEventListener("click", (e) =>
+        handleOutsideClick(e, toggleBtn, nav)
+    );
+}
+
+function handleMenuToggle(event, nav) {
+    event.stopPropagation();
+    nav.classList.toggle("show");
+}
+
+function handleOutsideClick(event, toggleBtn, nav) {
+    const clickedOutside =
+        !nav.contains(event.target) && !toggleBtn.contains(event.target);
+    if (clickedOutside) {
+        nav.classList.remove("show");
+    }
+}
+
+/* === Initialization === */
+document.addEventListener("DOMContentLoaded", initHeaderMenu);
+

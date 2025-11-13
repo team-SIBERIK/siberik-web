@@ -3,87 +3,134 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--gris-suave);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    background-color: var(--header-bg-color);
+    box-shadow: 0 1px 4px var(--shadow-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 5%;          
+    padding: 12px 5%;
     z-index: 1000;
     gap: 1rem;
-    height: 64px;              
+    height: 64px;
     box-sizing: border-box;
 }
 
+/* LOGO */
 header .name {
-    display: flex;             /* make it a flex container */
-    align-items: center;       /* vertically center the images */
-    gap: 40px;                
-    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
 header .name img {
     margin-top: 2px;
-    max-height: 30px; 
-    width: auto; 
+    max-height: 30px;
 }
 
-/* ==== NAV ==== */
-
+/* NAV */
 nav {
-  display: flex;
-  gap: 20px;
-  flex-grow: 1;
-  justify-content: flex-end;
-  align-items: center;
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 nav a {
-  position: relative;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  padding-bottom: 4px; /* espacio para la barrita */
-  transition: color 0.3s ease;
+    position: relative;
+    text-decoration: none;
+    color: var(--text-primary-color);
+    font-weight: 500;
+    padding-bottom: 4px; /* espacio para la barrita */
+    transition: color 0.3s ease;
 }
 
-/* barrita azul */
+/* barrita de acento */
 nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background-color: var(--azul-principal, #33aaff);
-  transition: width 0.3s ease;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent-color);  /* <<--- esta era la pieza que faltaba */
+    transition: width 0.3s ease;
 }
 
 /* hover y enlace activo */
 nav a:hover,
 nav a.active {
-  color: var(--azul-principal, #33aaff);
+    color: var(--accent-color);
 }
 
 nav a:hover::after,
 nav a.active::after {
-  width: 100%;
+    width: 100%;
 }
 
-/* RESPONSIVE */
 
-@media (max-width: 900px) {
-    nav a { font-size: 0.9rem; }
+/* BURGER BUTTON */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-primary-color);
 }
 
-@media (max-width: 640px) {
-    nav, .header-logo { 
-        display: none; 
+.menu-toggle.open::before { content: "✕"; }
+.menu-toggle::before { content: "☰"; }
+
+/* THEME BUTTON */
+.theme-toggle {
+    background: none;
+    border: none;
+    padding-top: 6px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.theme-toggle img.theme-icon {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 0 2px var(--shadow-color));
+    cursor: pointer;
+}
+
+/* MOBILE NAV */
+@media (max-width: 760px) {
+    .menu-toggle { display: block; }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        padding-bottom: 10px;
+        top: 64px;
+        right: 5%;
+        width: 90%;
+        gap: 0px;
+        max-width: 300px;
+        background-color: var(--header-bg-color);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px var(--shadow-color);
+        animation: fadeIn 0.25s ease;
     }
-    header { 
-        justify-content: center; 
+
+    nav.show { display: flex; }
+
+    nav a {
+        width: 88%;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-primary-color);
     }
-    header img.name { 
-        max-height: 56px; 
+
+    nav a:hover {
+        background-color: none;
     }
 }
