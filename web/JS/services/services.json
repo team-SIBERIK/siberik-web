@@ -1,0 +1,20 @@
+[
+    {
+        "name": "SIBERIK Labs",
+        "description": "labs.html",
+        "icon": "web/assets/icons/labs_icon.png",
+        "link": "https://labs.siberik.com"
+    },
+    {
+        "name": "SIBERIK AI",
+        "description": "ai.html",
+        "icon": "web/assets/icons/ai_icon.png",
+        "link": "https://ai.siberik.com"
+    },
+    {
+        "name": "SIBERIK Studio",
+        "description": "studio.html",
+        "icon": "web/assets/icons/studio_icon.png",
+        "link": "https://studio.siberik.com"
+    }
+]

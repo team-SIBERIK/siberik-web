@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="web/CSS/elements/footer.css"/>
 	<link rel="stylesheet" href="web/CSS/elements/modal.css"/>
 	<link rel="stylesheet" href="web/CSS/elements/carrousel.css"/>
+	<link rel="stylesheet" href="web/CSS/elements/service_carr.css"/>
 	<link rel="stylesheet" href="web/CSS/elements/ent-logos.css"/>
 	
 	<link rel="stylesheet" href="web/CSS/main-content.css"/>
@@ -41,11 +42,10 @@
         		</button>
 			</div>
 
-			
-
  			<button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
             	<!-- Burguer Icon -->
         	</button>
+			
 			<nav id="main-nav">
 				<a href="#quienes" class="nav-link">Quienes somos</a>
 				<a href="#servicios" class="nav-link">Servicios</a>
@@ -163,68 +163,9 @@
 					busque innovación y calidad en su contenido y procesos.
 				</p>
 
-				<div class="servicio">
-					<h3> ▶ Consultoría en Inteligencia Artificial</h3>
-					<p>
-						Ofrecemos soluciones personalizadas de IA, desde automatización 
-						de procesos hasta análisis avanzado de datos. Nuestro enfoque permite 
-						a las empresas optimizar recursos, mejorar la toma de decisiones y 
-						explorar nuevas oportunidades de innovación tecnológica con un soporte 
-						completo y confiable.
-					</p><br>
-					<div class="ia-logos">
-						<a href="https://azure.microsoft.com" target="_blank" rel="noopener noreferrer">
-							<img src="web/assets/Mike/logos/azure.png" alt="Azure Logo" class="ia-logo"/>
-						</a>
-						<a href="https://openai.com" target="_blank" rel="noopener noreferrer">
-							<img src="web/assets/Mike/logos/openai.png" alt="OpenAI Logo" class="ia-logo"/>
-						</a>
-						<a href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer">
-							<img src="web/assets/Mike/logos/copilot.png" alt="Copilot Logo" class="ia-logo"/>
-						</a>
-						<a href="https://aistudio.google.com/welcome" target="_blank" rel="noopener noreferrer">
-							<img src="web/assets/Mike/logos/gemini.png" alt="Gemini Logo" class="ia-logo"/>
-						</a>
-						<a href="https://deepseek.com/en" target="_blank" rel="noopener noreferrer">
-							<img src="web/assets/Mike/logos/deepseek.png" alt="DeepSeek Logo" class="ia-logo"/>
-						</a>
-						<a href="https://www.tensorflow.org" target="_blank" rel="noopener noreferrer">
-							<img src="web/assets/Mike/logos/tensorflow.png" alt="TensorFlow Logo" class="ia-logo"/>
-						</a>
-						<a href="https://www.docker.com" target="_blank" rel="noopener noreferrer">
-							<img src="web/assets/Mike/logos/docker.png" alt="Docker Logo" class="ia-logo"/>
-						</a>
-					</div><br>
-				</div>
+				<div id="serviceCarouselRoot"></div>
+				<div id="serviceDetail" class="servicio" style="display:none;"></div>
 
-				<div class="servicio">
-					<h3> ▶ Producción Audiovisual</h3>
-					<p>
-						Brindamos servicios profesionales de fotografía, vídeo, música, 
-						dirección y escenografía. Combinamos creatividad y técnica para 
-						generar contenido audiovisual impactante y de alta calidad, 
-						adaptado a las necesidades de marcas, proyectos artísticos o iniciativas 
-						creativas que buscan destacar en su sector.
-					</p>
-					<br>
-					<div class="ia-logos">
-						<a href="https://www.adobe.com/products/premiere.html" target="_blank" rel="noopener noreferrer">
-							<img src="web/assets/Dro/logos/premiere.png" alt="Adobe Premiere Logo" class="ia-logo"/>
-						</a>
-						<a href="https://www.adobe.com/products/aftereffects.html" target="_blank" rel="noopener noreferrer">
-							<img src="web/assets/Dro/logos/aftereffects.png" alt="After Effects Logo" class="ia-logo"/>
-						</a>
-						<a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" rel="noopener noreferrer">
-							<img src="web/assets/Dro/logos/davinci.png" alt="DaVinci Resolve Logo" class="ia-logo"/>
-						</a>
-						<a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener noreferrer">
-							<img src="web/assets/Dro/logos/photoshop.png" alt="Photoshop Logo" class="ia-logo"/>
-						</a>
-						<a href="https://www.capcut.com" target="_blank" rel="noopener noreferrer">
-							<img src="web/assets/Dro/logos/capcut.png" alt="CapCut Logo" class="ia-logo"/>
-						</a>
-					</div><br>
-				</div>
 			</section>
 
 			<section id="proyectos">
@@ -267,6 +208,7 @@
 	<script src="web/JS/index.js"></script>
 	<script src="web/JS/theme.js"></script>
 	<script src="web/JS/elements/carrousel.js"></script>
+	<script src="web/JS/elements/service_carr.js"></script>
 	<script src="web/JS/elements/background.js"></script>
 	<script src="web/JS/elements/modal.js"></script>
 	<script src="web/JS/elements/header.js"></script>
