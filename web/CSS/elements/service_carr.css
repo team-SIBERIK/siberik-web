@@ -1,8 +1,9 @@
 /* ===========================================================
-   CONTENEDOR GENERAL
+    GENERAL CONTAINER
    =========================================================== */
+
 .service-carousel-container {
-    width: 80%;
+    width: 90%;
     max-width: 700px;
     margin: 0 auto;
     height: 220px;
@@ -16,8 +17,9 @@
 }
 
 /* ===========================================================
-   FLECHAS
+    ARROWS
    =========================================================== */
+
 .service-arrow {
     cursor: pointer;
     font-size: 2.4rem;
@@ -30,8 +32,9 @@
 }
 
 /* ===========================================================
-   CARRUSEL
+    CARROUSEL
    =========================================================== */
+
 .service-carousel {
     flex: 1;
     height: 100%;
@@ -45,8 +48,9 @@
 }
 
 /* ===========================================================
-   CADA ITEM DEL CARRUSEL
+    EACH SERVICE ITEM
    =========================================================== */
+
 .service-item {
     position: absolute;
 
@@ -74,14 +78,13 @@
 
 /* ITEM CENTRAL */
 .service-item.center {
-    width: 150px;
-    height: 150px;
     opacity: 1;
 }
 
 /* ===========================================================
-   BOTÓN "VER SERVICIO"
+    "SEE SERVICE" BUTTONs
    =========================================================== */
+
 .service-view-btn-wrapper {
     text-align: center;
     margin-top: 1rem;
@@ -104,9 +107,33 @@
 }
 
 /* ===========================================================
-   DETALLE DE SERVICIO (HTML cargado dinámicamente)
+    SERVICE DETAIL (dynamic content)
    =========================================================== */
+
 #serviceDetail.servicio {
     margin-top: 2rem;
     padding: 1rem 0.5rem;
+}
+
+@media (max-width: 590px) {
+
+    .service-item {
+        width: 88px;  
+        height: 88px;
+    }
+
+    .service-item.center {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 470px) {
+    .service-item {
+        width: 66px;   
+        height: 66px;
+    }
+
+    .service-item.center {
+        opacity: 1;
+    }
 }
