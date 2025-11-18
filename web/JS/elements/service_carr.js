@@ -27,10 +27,10 @@ class ServiceLoader {
 class ServiceCarousel {
     constructor(services, rootId, detailId) {
         this.services = services;
-        this.current = 0;             // índice del servicio central
-        this.visibleIndices = [];     // [left, center, right]
+        this.current = 0;
+        this.visibleIndices = [];     
         this.isAnimating = false;
-        this.animationDuration = 350; // ms
+        this.animationDuration = 350; 
 
         this.root = document.getElementById(rootId);
         this.detail = document.getElementById(detailId);
@@ -43,6 +43,7 @@ class ServiceCarousel {
         this.arrowLeft = this.root.querySelector("#serviceArrowLeft");
         this.arrowRight = this.root.querySelector("#serviceArrowRight");
         this.btnView = this.root.querySelector("#serviceViewBtn");
+        this.titleBox = this.root.querySelector("#serviceTitle");
         this.items = [];
 
         this._setupInitialItems();
@@ -58,8 +59,11 @@ class ServiceCarousel {
                 <div class="service-carousel" id="serviceCarousel"></div>
                 <div id="serviceArrowRight" class="service-arrow">›</div>
             </div>
+
+            <div id="serviceTitle" class="service-title"></div>
+
             <div class="service-view-btn-wrapper">
-                <button id="serviceViewBtn" class="service-view-btn">Ver servicio</button>
+                <button id="serviceViewBtn" class="service-view-btn">▼</button>
             </div>
         `;
     }
@@ -70,7 +74,7 @@ class ServiceCarousel {
         return width * 0.40;
     }
 
-    /* ---------- Cargar los 3 elementos iniciales ---------- */
+    /* ---------- Cargar los elementos iniciales ---------- */
     _setupInitialItems() {
         const len = this.services.length;
 
@@ -101,6 +105,8 @@ class ServiceCarousel {
             this.carousel.appendChild(item);
             this.items.push(item);
         });
+
+        this.titleBox.textContent = this.services[this.current].name;
     }
 
     /* ---------- Resize responsive ---------- */
@@ -118,7 +124,7 @@ class ServiceCarousel {
     }
 
     /* ===========================================================
-       ANIMACIÓN SUAVE COMPLETA (posición + escala + opacidad)
+       ANIMACIÓN SUAVE COMPLETA
        =========================================================== */
     _animate(direction) {
         if (this.isAnimating) return;
@@ -131,7 +137,7 @@ class ServiceCarousel {
             return { x: m ? parseFloat(m[1]) : 0, s: m ? parseFloat(m[2]) : 1 };
         };
 
-        // leer estado inicial real
+        // Leer estado inicial
         const startX = [], startS = [], startO = [];
         this.items.forEach(it => {
             const { x, s } = parse(it.style.transform);
@@ -140,7 +146,7 @@ class ServiceCarousel {
             startO.push(parseFloat(it.style.opacity) || 0.5);
         });
 
-        // destino según dirección
+        // Destino según dirección
         let endX, endS, endO;
         if (direction === "right") {
             endX = [-2 * off, -off, 0];
@@ -179,7 +185,7 @@ class ServiceCarousel {
             const right = (this.current + 1) % len;
             this.visibleIndices = [left, this.current, right];
 
-            /* ---------- Reset final + fade-in del nuevo ---------- */
+            /* ---------- Reset + Fade-in ---------- */
             const newOff = this._computeOffset();
             const xs = [-newOff, 0, newOff];
             const scales = [0.75, 1.15, 0.75];
@@ -195,7 +201,6 @@ class ServiceCarousel {
                 item.classList.toggle("center", i === 1);
 
                 if (i === newItemIndex) {
-                    // ítem nuevo → fade in
                     item.style.transition = "none";
                     item.style.opacity = 0;
                     item.style.transform = `translateX(${xs[i]}px) scale(${scales[i]})`;
@@ -211,6 +216,13 @@ class ServiceCarousel {
                 }
             });
 
+            /* ---------- actualizar título ---------- */
+            this.titleBox.textContent = this.services[this.current].name;
+
+            /* ---------- cerrar detalle si estaba abierto ---------- */
+            this.detail.style.display = "none";
+            this.btnView.textContent = "▼";
+
             this.isAnimating = false;
         };
 
@@ -225,16 +237,24 @@ class ServiceCarousel {
     _attachEvents() {
         this.arrowLeft?.addEventListener("click", () => this._moveLeft());
         this.arrowRight?.addEventListener("click", () => this._moveRight());
-        this.btnView?.addEventListener("click", () => this._showDetail());
+        this.btnView?.addEventListener("click", () => this._toggleDetail());
     }
 
-    /* ---------- Cargar HTML de servicio ---------- */
-    async _showDetail() {
+    /* ---------- Toggle de detalle ---------- */
+    async _toggleDetail() {
         const service = this.services[this.current];
+
+        if (this.detail.style.display === "block") {
+            this.detail.style.display = "none";
+            this.btnView.textContent = "▼";
+            return;
+        }
+
         try {
             const html = await ServiceLoader.loadHTML(service.description);
             this.detail.innerHTML = html;
             this.detail.style.display = "block";
+            this.btnView.textContent = "▲";
             this.detail.scrollIntoView({ behavior: "smooth", block: "start" });
         } catch (err) {
             console.error(err);

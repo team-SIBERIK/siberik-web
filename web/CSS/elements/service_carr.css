@@ -6,7 +6,8 @@
     width: 90%;
     max-width: 700px;
     margin: 0 auto;
-    height: 220px;
+    height: 140px;
+    margin-top: 40px;
 
     display: flex;
     align-items: center;
@@ -63,7 +64,6 @@
 
     opacity: 0.65;
 
-    /* ojo: SIN transitions porque las animaciones las maneja JS */
     transition: none;
     will-change: transform, opacity;
 
@@ -79,6 +79,14 @@
 /* ITEM CENTRAL */
 .service-item.center {
     opacity: 1;
+}
+
+.service-title {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
 /* ===========================================================
@@ -116,6 +124,11 @@
 }
 
 @media (max-width: 590px) {
+
+    .service-carousel-container {
+        height: 100px;
+
+    }
 
     .service-item {
         width: 88px;  
