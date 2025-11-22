@@ -28,7 +28,7 @@ function initSmoothScroll() {
             if (!target) return;
             e.preventDefault();
             const header = document.querySelector(".sb-header");
-            const offset = (header?.offsetHeight || 0);
+            const offset = (header?.offsetHeight || 0) - 35;
             const rect = target.getBoundingClientRect();
             const top = rect.top + window.scrollY - offset;
             window.scrollTo({ top, behavior: "smooth" });
