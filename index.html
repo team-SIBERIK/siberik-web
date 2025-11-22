@@ -1,218 +1,407 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<link rel="icon" type="image/png" href="web/assets/SIBERIK.png">
-	<meta charset="UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>SIBERIK | Inteligencia y Creatividad</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIBERIK | Inteligencia y Creatividad</title>
+    <link rel="icon" type="image/png" href="web/assets/SIBERIK/SIBERIK.png">
+    <link rel="stylesheet" href="web/CSS/style.css">
 
-	<link rel="stylesheet" href="web/CSS/elements/header.css"/>
-	<link rel="stylesheet" href="web/CSS/elements/footer.css"/>
+    <link rel="stylesheet" href="web/CSS/elements/sections.css"/>
+    <link rel="stylesheet" href="web/CSS/elements/header.css"/>
+    <link rel="stylesheet" href="web/CSS/elements/footer.css"/>
 	<link rel="stylesheet" href="web/CSS/elements/modal.css"/>
 	<link rel="stylesheet" href="web/CSS/elements/carrousel.css"/>
-	<link rel="stylesheet" href="web/CSS/elements/service_carr.css"/>
-	<link rel="stylesheet" href="web/CSS/elements/ent-logos.css"/>
-	
-	<link rel="stylesheet" href="web/CSS/main-content.css"/>
-	<link rel="stylesheet" href="web/CSS/general.css"/>
+	<link rel="stylesheet" href="web/CSS/elements/logos-carr.css"/>
 
-	<link rel="stylesheet" href="web/CSS/themes/dark.css" id="theme-stylesheet"/>
 </head>
 <body>
-	<canvas id="hero-background"></canvas>
-	<!-- INTRO -->
-	<div id="intro">
-		<img src="web/assets/SIBERIK/SIBERIK.png" alt="Logo Siberik" class="intro-logo"/>
-		<img src="web/assets/SIBERIK/NAME.png" alt="SIBERIK name" class="intro-name"/>
-		<p>Inteligencia y Creatividad para un mundo conectado</p>
-		<div class="buttons">
-			<button class="boton" id="btnKnowUs">Conócenos</button>
-			<button class="boton" id="btnContactUs">Contáctanos</button>
-		</div>
-	</div>
+    <div class="page">
+        <header class="sb-header">
+            <div class="sb-header-inner container">
+                <a href="#top" class="sb-brand" aria-label="Siberik inicio">
+                    <img src="web/assets/SIBERIK/SIBERIK.png" alt="Logo Siberik" class="sb-logo-mark">
+                    <img src="web/assets/SIBERIK/NAME.png" alt="Siberik" class="sb-logo-name">
+                </a>
 
-	<!-- CONTENIDO PRINCIPAL -->
-	<div id="main-content">
-		<header>
-			<div class="name">	
-				<img src="web/assets/SIBERIK/SIBERIK.png" alt="Logo Siberik" class="header-logo"/>
-				<img src="web/assets/SIBERIK/NAME.png" alt="SIBERIK name"/>
-				<button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-            		<!-- Theme Icon will be inserted here by JS -->
-        		</button>
-			</div>
+                <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+            	    <!-- Burguer Icon -->
+        	    </button>
 
- 			<button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
-            	<!-- Burguer Icon -->
-        	</button>
-			
-			<nav id="main-nav">
-				<a href="#quienes" class="nav-link">Quienes somos</a>
-				<a href="#servicios" class="nav-link">Servicios</a>
-				<a href="#proyectos" class="nav-link">Proyectos</a>
-				<a href="#contacto" class="nav-link">Contacto</a>
-			</nav>
-		</header>
+                <nav id="main-nav" class="sb-nav">
+                    <a href="#units" class="nav-link">Equipos</a>
+                    <a href="#about" class="nav-link">Quiénes somos</a>
+                    <a href="#stack" class="nav-link">Stack y tecnologias</a>
+                    <a href="#projects" class="nav-link">Proyectos</a>
+                    <a href="#contact" class="nav-link">Contacto</a>
+                </nav>
+            </div>
+        </header>
 
-		<main>
-			<section id="quienes">
-				<h2>Quiénes Somos</h2>
-				<p>
-					Siberik es una empresa que une ingeniería de datos, inteligencia artificial 
-					y producción audiovisual para crear soluciones innovadoras que combinan 
-					tecnología y creatividad. Fundada por Mike y Rodrigo, nuestro objetivo es 
-					transformar ideas en experiencias reales, éticas y sostenibles.
-				</p>
+        <main>
+            <section id="top" class="hero" data-units-json="web/JS/teams/teams.json">
+                <br>
+                <div class="hero-overlay"></div>
+                <div class="hero-inner container">
+                    <div class="hero-copy">
+                        <p class="hero-eyebrow">Tecnología · Arte · Creatividad</p>
+                        <h1>Inteligencia y creatividad<br>para un mundo conectado.</h1>
+                        <p class="hero-text">
+                            Combinamos ingeniería de datos, inteligencia artificial y producción audiovisual
+                            para transformar ideas en experiencias reales, éticas y sostenibles.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#units" class="btn primary">Explorar unidades</a>
+                            <a href="#contact" class="btn ghost">Hablemos de tu proyecto</a>
+                        </div>
 
-				<div class="founders-buttons">
-					<button class="founder-btn boton" data-target="mikeModal">Mike</button>
-					<button class="founder-btn boton" data-target="rodrigoModal">Rodrigo</button>
-				</div>
+                        <!-- Carrusel de chips -->
+                        <div class="hero-carousel-wrapper">
+                            <div class="hero-carousel" id="heroCarousel">
+                                <!-- Chips generados por JS -->
+                            </div>
+                        </div>
+                    </div>
 
-				<!-- Dark Background -->
-				<div id="fadeBackground" class="fade-background"></div>
+                    <!-- Panel dinámico -->
+                    <div class="hero-panel" id="heroPanel">
+                        <div class="hero-panel-logo-wrap">
+                            <img id="heroPanelLogo" class="hero-panel-logo" src="" alt="Unidad Siberik">
+                        </div>
+                        <div class="hero-panel-text">
+                            <h3 id="heroPanelTitle" class="hero-panel-title">Cargando...</h3>
+                            <div id="heroPanelDescription" class="hero-panel-description">
+                                <!-- HTML de ai.html / labs.html / studio.html -->
+                            </div>
+                            <a id="heroPanelLink" class="hero-panel-link" href="#" target="_blank" rel="noopener">
+                                Visitar sitio
+                            </a>
+                        </div>
+                        <div class="hero-panel-progress">
+                            <div class="hero-panel-progress-bar" id="heroPanelProgress"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-				<!-- Modal: Mike -->
-				<div id="mikeModal" class="modal">
-					<div class="modal-content">
-						<span class="close" onclick="closeModal('mikeModal')">&times;</span>
-						<div class="profile-banner">
-							<img src="web/assets/Mike/personal/prof_pic.png" alt="Foto de Mike" class="profile-pic">
-						</div>
-						<h2>Mike</h2>
-						<div class="socials">
-							<a href="https://github.com/Mikemaranon" target="_blank" aria-label="GitHub">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-							</a>
-							<a href="https://www.linkedin.com/in/mikemaranon" target="_blank" aria-label="LinkedIn">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
-							</a>
-						</div>
-						<p>
-							Ingeniero de datos con experiencia en sistemas, cloud y programación 
-							(Java, Python, JavaScript, C, etc.). Mike combina su pasión por la 
-							tecnología con la música moderna, aportando un enfoque creativo a 
-							cada proyecto de IA y automatización que desarrolla.
-						</p>
-						<div class="roles-container">
-							<h3>Roles</h3>
-							<div class="roles-list">
-								<div class="role-item">co-CEO</div>
-								<div class="role-item">CTO</div>
-								<div class="role-item">Ingeniero de datos</div>
-								<div class="role-item">Desarrollador de IA</div>
-								<div class="role-item">Desarrollador web</div>
-							</div>
-						</div>
-					</div>
-				</div>
+            <section id="units" class="section units">
+                <div class="container">
+                    <header class="section-header">
+                        <h2>Nuestros equipos</h2>
+                        <p>
+                            Siberik se organiza en distintos equipos especializados que comparten la misma visión:
+                            usar tecnología y creatividad para construir soluciones con impacto real.
+                        </p>
+                    </header>
 
-				<!-- Modal: Rodrigo -->
-				<div id="rodrigoModal" class="modal">
-					<div class="modal-content">
-						<span class="close" onclick="closeModal('rodrigoModal')">&times;</span>
-						<div class="profile-banner">
-							<img src="web/assets/Dro/personal/prof_pic.png" alt="Foto de Rodrigo" class="profile-pic">
-						</div>
-						<h2>Rodrigo</h2>
-						<div class="socials">
-							<a href="https://github.com/" target="_blank" aria-label="GitHub">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-							</a>
-							<a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
-								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
-							</a>
-						</div>
-						<p>
-							Escenógrafo y especialista audiovisual, experto en montaje, fotografía 
-							y producción de contenido creativo. Músico clásico profesional, Rodrigo 
-							aporta sensibilidad artística y visión estética, asegurando que cada 
-							proyecto audiovisual de Siberik tenga impacto y calidad.
-						</p>
-						<div class="roles-container">
-							<h3>Roles</h3>
-							<div class="roles-list">
-								<div class="role-item">co-CEO</div>
-								<div class="role-item">CCO</div>
-								<div class="role-item">Escenógrafo</div>
-								<div class="role-item">Productor audiovisual</div>
-								<div class="role-item">Director de arte</div>
-							</div>
-						</div>
-						<div class="carousel">
-							<button class="carousel-btn prev">&#10094;</button>
+                    <div class="units-grid">
+                        <article class="unit-card unit-ai">
+                            <div class="unit-icon-wrapper">
+                                <img src="web/assets/SIBERIK/SIBERIK_AI.png" alt="AI" class="unit-icon">
+                            </div>
+                            <h3>Siberik AI</h3>
+                            <p>
+                                Consultoría de inteligencia artificial, arquitectura cloud/on-premise,
+                                análisis de datos y automatización. Hogar del proyecto SIMA.
+                            </p>
+                            <ul class="unit-list">
+                                <li>Sistemas inteligentes a medida</li>
+                                <li>Integración de IA generativa</li>
+                                <li>Automatización de procesos</li>
+                            </ul>
+                            <span class="unit-status">Sitio dedicado en preparación</span>
+                        </article>
 
-							<div class="carousel-track">
-								<img src="web/assets/Dro/personal/img_1.JPG" alt="img 1">
-								<img src="web/assets/Dro/personal/img_2.JPG" alt="img 2">
-								<img src="web/assets/Dro/personal/catedral.jpg" alt="Catedral">
-							</div>
+                        <article class="unit-card unit-studio">
+                            <div class="unit-icon-wrapper">
+                                <img src="web/assets/SIBERIK/SIBERIK_Studio.png" alt="Studio" class="unit-icon">
+                            </div>
+                            <h3>Siberik Studio</h3>
+                            <p>
+                                Producción audiovisual, composición musical y desarrollo de videojuegos
+                                con una mirada artística y técnica a la vez.
+                            </p>
+                            <ul class="unit-list">
+                                <li>Bandas sonoras y diseño sonoro</li>
+                                <li>Vídeos creativos y narrativos</li>
+                                <li>Juegos indie</li>
+                            </ul>
+                            <span class="unit-status">Preproducción de contenidos</span>
+                        </article>
 
-							<button class="carousel-btn next">&#10095;</button>
-						</div>
-					</div>
-				</div>
-			</section>
+                        <article class="unit-card unit-labs">
+                            <div class="unit-icon-wrapper">
+                                <img src="web/assets/SIBERIK/SIBERIK_Labs.png" alt="Labs" class="unit-icon">
+                            </div>
+                            <h3>Siberik Labs</h3>
+                            <p>
+                                Laboratorio donde volcamos contenido didáctico propio y de terceros,
+                                enlazado a repositorios oficiales de GitHub y recursos técnicos.
+                            </p>
+                            <ul class="unit-list">
+                                <li>Guías y tutoriales de IA y datos</li>
+                                <li>Repositorios abiertos y documentación</li>
+                                <li>Experimentos y proyectos de laboratorio</li>
+                            </ul>
+                            <span class="unit-status">Lanzamiento progresivo</span>
+                        </article>
+                    </div>
+                </div>
+            </section>
 
-			<section id="servicios">
-				<h2>Servicios</h2>
-				<p>
-					En Siberik ofrecemos soluciones que combinan tecnología y creatividad, 
-					orientadas a sectores como empresas tecnológicas, productoras audiovisuales, 
-					proyectos musicales, desarrollo de videojuegos y cualquier iniciativa que 
-					busque innovación y calidad en su contenido y procesos.
-				</p>
+            <section id="about" class="section about">
+                <div class="container">   
+                    <header class="section-header">
+                        <h2>Quiénes somos</h2>
+                    </header>
+                </div>    
+                <div class="container about-layout">
+                    <div class="about-text">
+                        <p>
+                            Siberik es una empresa que une ingeniería de datos, inteligencia artificial
+                            y producción audiovisual para crear soluciones innovadoras que combinan
+                            tecnología y creatividad.
+                        </p>
+                        <p>
+                            Fundada por Mike y Rodrigo, nuestro objetivo es construir una base sólida
+                            de confianza y calidad antes de escalar hacia proyectos más ambiciosos
+                            como Siberik Connect.
+                        </p>
+                        <p>
+                            Creemos en la tecnología ética, la transparencia y el cuidado por las personas
+                            detrás de cada proyecto.
+                        </p>
+                    </div>
 
-				<div id="serviceCarouselRoot"></div>
-				<div id="serviceTitle" class="service-title"></div>
-				<div id="serviceDetail" class="servicio" style="display:none;"></div>
+                    <div class="about-team">
 
-			</section>
+                        <!-- Dark Background -->
+				        <div id="fadeBackground" class="fade-background"></div>
+                        
+                        <article class="person-card" data-modal="mikeModal">
+                            <img src="web/assets/Mike/personal/prof_pic.png" alt="Foto de Mike" class="person-avatar">
+                            <h3>Mike</h3>
+                            <p>Ingeniero de datos · IA · Cloud</p>
+                        </article>
+    
+                        <article class="person-card" data-modal="rodrigoModal">
+                            <img src="web/assets/Dro/personal/prof_pic.png" alt="Foto de Rodrigo" class="person-avatar">
+                            <h3>Rodrigo</h3>
+                            <p>Productor audiovisual · Escenografía</p>
+                        </article>
 
-			<section id="proyectos">
-				<h2>Proyectos</h2>
-				<h3> ▶ Siberik Connect</h3>
-				<p>
-					Siberik Connect es una iniciativa sin ánimo de lucro diseñada para 
-					brindar apoyo a personas en momentos de vulnerabilidad emocional o 
-					riesgo de suicidio. La plataforma utiliza inteligencia artificial 
-					para ofrecer inspiración, consejos y posibles soluciones, y en situaciones 
-					críticas puede conectar a la persona con un usuario dispuesto a escuchar 
-					y brindar compañía.
-				</p>
-				<p>
-					Toda ayuda aportada se destina exclusivamente al mantenimiento de la 
-					plataforma o se dona a proyectos sociales de prevención del suicidio. 
-					SIBERIK no obtiene ningún beneficio económico de esta iniciativa.
-				</p>
-				<p>
-					Este proyecto refleja nuestro compromiso con la tecnología ética y con la 
-					creación de soluciones que realmente marcan la diferencia en la vida de 
-					las personas.
-				</p>
-				<br>
-				<button class="boton" onclick="window.open('https://team-siberik.github.io/siberik-connect', '_blank')">Apoya la causa</button>
-			</section>
+                        <!-- Modal: Mike -->
+                        <div id="mikeModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close" onclick="closeModal('mikeModal')">&times;</span>
+                                <div class="profile-banner">
+                                    <img src="web/assets/Mike/personal/prof_pic.png" alt="Foto de Mike" class="profile-pic">
+                                </div>
+                                <h2>Mike</h2>
+                                <div class="socials">
+                                    <a href="https://github.com/Mikemaranon" target="_blank" aria-label="GitHub">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/mikemaranon" target="_blank" aria-label="LinkedIn">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+                                    </a>
+                                </div>
+                                <p>
+                                    Ingeniero de datos con experiencia en sistemas, cloud y programación 
+                                    (Java, Python, JavaScript, C, etc.). Mike combina su pasión por la 
+                                    tecnología con la música moderna, aportando un enfoque creativo a 
+                                    cada proyecto de IA y automatización que desarrolla.
+                                </p>
+                                <div class="roles-container">
+                                    <h3>Roles</h3>
+                                    <div class="roles-list">
+                                        <div class="role-item">co-CEO</div>
+                                        <div class="role-item">CTO</div>
+                                        <div class="role-item">Ingeniero de datos</div>
+                                        <div class="role-item">Desarrollador de IA</div>
+                                        <div class="role-item">Desarrollador web</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-			<section id="contacto" class="last">
-				<h2>Contacto</h2>
-				<p>¿Tienes una idea? Escríbenos a <a href="mailto:team.siberik@gmail.com">team.siberik@gmail.com</a> o contáctanos en nuestras redes.</p>
-			</section>
-			<br>
-		</main>
-	</div>
-	<footer>
-		<img src="web/assets/SIBERIK/SIBERIK.png" alt="Siberik" style="width:40px; opacity:0.7;"/><br/>
-		<br>
-		© 2025 SIBERIK. Todos los derechos reservados.
-	</footer>
-	<script src="web/JS/index.js"></script>
-	<script src="web/JS/theme.js"></script>
-	<script src="web/JS/elements/carrousel.js"></script>
-	<script src="web/JS/elements/service_carr.js"></script>
-	<script src="web/JS/elements/background.js"></script>
+                        <!-- Modal: Rodrigo -->
+                        <div id="rodrigoModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close" onclick="closeModal('rodrigoModal')">&times;</span>
+                                <div class="profile-banner">
+                                    <img src="web/assets/Dro/personal/prof_pic.png" alt="Foto de Rodrigo" class="profile-pic">
+                                </div>
+                                <h2>Rodrigo</h2>
+                                <div class="socials">
+                                    <a href="https://github.com/" target="_blank" aria-label="GitHub">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                                    </a>
+                                    <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+                                    </a>
+                                </div>
+                                <p>
+                                    Escenógrafo y especialista audiovisual, experto en montaje, fotografía 
+                                    y producción de contenido creativo. Músico clásico profesional, Rodrigo 
+                                    aporta sensibilidad artística y visión estética, asegurando que cada 
+                                    proyecto audiovisual de Siberik tenga impacto y calidad.
+                                </p>
+                                <div class="roles-container">
+                                    <h3>Roles</h3>
+                                    <div class="roles-list">
+                                        <div class="role-item">co-CEO</div>
+                                        <div class="role-item">CCO</div>
+                                        <div class="role-item">Escenógrafo</div>
+                                        <div class="role-item">Productor audiovisual</div>
+                                        <div class="role-item">Director de arte</div>
+                                    </div>
+                                </div>
+                                <div class="carousel">
+                                    <button class="carousel-btn prev">&#10094;</button>
+
+                                    <div class="carousel-track">
+                                        <img src="web/assets/Dro/personal/img_1.JPG" alt="img 1">
+                                        <img src="web/assets/Dro/personal/img_2.JPG" alt="img 2">
+                                        <img src="web/assets/Dro/personal/catedral.jpg" alt="Catedral">
+                                    </div>
+
+                                    <button class="carousel-btn next">&#10095;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="stack" class="section stack">
+                <div class="container">
+                    <header class="section-header">
+                        <h2>Herramientas que usamos</h2>
+                        <p>Unimos herramientas de IA, desarrollo y producción audiovisual.</p>
+                    </header>
+
+                    <div class="stack-grid">
+                        <div>
+                            <h3>Tecnología &amp; IA</h3>
+                            <div class="ia-logos">
+                                <a href="https://azure.microsoft.com" target="_blank" rel="noopener noreferrer">
+                                    <img src="web/assets/Mike/logos/azure.png" alt="Azure Logo" class="ia-logo"/>
+                                </a>
+                                <a href="https://openai.com" target="_blank" rel="noopener noreferrer">
+                                    <img src="web/assets/Mike/logos/openai.png" alt="OpenAI Logo" class="ia-logo"/>
+                                </a>
+                                <a href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer">
+                                    <img src="web/assets/Mike/logos/copilot.png" alt="Copilot Logo" class="ia-logo"/>
+                                </a>
+                                <a href="https://aistudio.google.com/welcome" target="_blank" rel="noopener noreferrer">
+                                    <img src="web/assets/Mike/logos/gemini.png" alt="Gemini Logo" class="ia-logo"/>
+                                </a>
+                                <a href="https://deepseek.com/en" target="_blank" rel="noopener noreferrer">
+                                    <img src="web/assets/Mike/logos/deepseek.png" alt="DeepSeek Logo" class="ia-logo"/>
+                                </a>
+                                <a href="https://www.tensorflow.org" target="_blank" rel="noopener noreferrer">
+                                    <img src="web/assets/Mike/logos/tensorflow.png" alt="TensorFlow Logo" class="ia-logo"/>
+                                </a>
+                                <a href="https://www.docker.com" target="_blank" rel="noopener noreferrer">
+                                    <img src="web/assets/Mike/logos/docker.png" alt="Docker Logo" class="ia-logo"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Producción audiovisual</h3>
+                            <div class="ia-logos">
+                                <img src="web/assets/Dro/logos/premiere.png" alt="Premiere" class="ia-logo">
+                                <img src="web/assets/Dro/logos/aftereffects.png" alt="After Effects" class="ia-logo">
+                                <img src="web/assets/Dro/logos/davinci.png" alt="DaVinci" class="ia-logo">
+                                <img src="web/assets/Dro/logos/photoshop.png" alt="Photoshop" class="ia-logo">
+                                <img src="web/assets/Dro/logos/capcut.png" alt="Capcut" class="ia-logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="section projects">
+                <div class="container">
+                    <header class="section-header">
+                        <h2>Lo que estamos construyendo</h2>
+                        <p>
+                            Estamos en fase de formación y desarrollo interno. Estos son algunos
+                            de los proyectos que marcan el rumbo de Siberik.
+                        </p>
+                    </header>
+
+                    <div class="projects-grid">
+                        <a href="https://team-siberik.github.io/siberik-connect"><article class="project-card">
+                            <h3>Siberik Connect</h3>
+                            <p>
+                                Plataforma sin ánimo de lucro centrada en acompañar a personas
+                                en riesgo de abandono o suicidio mediante un sistema de apoyo,
+                                recursos locales y, en casos extremos, activación de emergencias.
+                            </p>
+                            <p class="project-note">
+                                Aparcado temporalmente mientras consolidamos la base de confianza
+                                y servicios de Siberik.
+                            </p>
+                        </article></a>
+
+                        <a href="https://team-siberik.github.io/sima-project"><article class="project-card">
+                            <h3>Proyecto SIMA</h3>
+                            <p>
+                                SIMA (Siberik Internal Management Agent): un núcleo de IA diseñado
+                                para integrarse en distintos contextos (consultoría, herramientas internas,
+                                asistentes especializados).
+                            </p>
+                            <p class="project-note">
+                                En diseño arquitectónico y pruebas de concepto dentro de Siberik AI.
+                            </p>
+                        </article></a>
+
+                        <a href="https://team-siberik.github.io/siberik-studio"><article class="project-card">
+                            <h3>Pipeline creativo de Siberik Studio</h3>
+                            <p>
+                                Desarrollo de un flujo de trabajo que unifica composición musical,
+                                narrativa visual y herramientas interactivas para videojuegos y piezas
+                                audiovisuales.
+                            </p>
+                            <p class="project-note">
+                                Explorando prototipos de juegos y piezas audiovisuales para portfolio.
+                            </p>
+                        </article></a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section contact">
+                <div class="container contact-inner">
+                    <div>
+                        <h2>Contacto</h2>
+                        <p>
+                            ¿Tenés una idea, un proyecto o simplemente querés explorar posibilidades?
+                            Hablemos y vemos qué podemos construir juntos.
+                        </p>
+                    </div>
+                    <div class="contact-actions">
+                        <a href="mailto:hello.siberik@gmail.com" class="btn primary">Escribir a Siberik</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer-inner">
+                <span>© 2025 Siberik. Todos los derechos reservados.</span>
+                <span class="footer-meta">Tecnología · Arte · Creatividad</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="web/JS/main.js"></script>
 	<script src="web/JS/elements/modal.js"></script>
-	<script src="web/JS/elements/header.js"></script>
-	<script src="web/JS/elements/section.js"></script>
+	<script src="web/JS/elements/carrousel.js"></script>
+	<script src="web/JS/elements/logos-carr.js"></script>
+	<script src="web/JS/elements/hero.js"></script>
 </body>
 </html>

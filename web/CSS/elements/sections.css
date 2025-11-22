@@ -1,0 +1,297 @@
+
+/* ===========================
+    GENERIC SECTION STYLES
+=========================== */
+
+.container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 96px 0;
+}
+
+.section-header {
+    max-width: 640px;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    margin: 0 0 10px;
+    font-size: clamp(2rem, 2.4vw, 2.4rem);
+}
+
+.section-header p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* responsive adjustments */
+
+@media (max-width: 640px) {
+    .section {
+        padding: 72px 0;
+    }
+}
+
+/* ================
+    FIRST SECTION
+================ */
+
+/* HERO */
+
+.hero {
+    position: relative;
+    padding: calc(var(--header-h) + 40px) 0 96px;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top left, rgba(123, 92, 255, 0.2), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(66, 226, 184, 0.18), transparent 55%);
+    pointer-events: none;
+}
+
+.hero-inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0,1.4fr) minmax(0,1fr);
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-copy {
+    max-width: 560px;
+}
+
+.hero-eyebrow {
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 10px;
+}
+
+.hero h1 {
+    margin: 0 0 16px;
+    font-size: clamp(2.6rem, 4vw, 3.4rem);
+    line-height: 1.05;
+}
+
+.hero-text {
+    margin: 0 0 22px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .18s ease, transform .1s ease, border-color .18s ease;
+    white-space: nowrap;
+}
+
+.btn.primary {
+    background: var(--accent);
+    border-color: var(--accent-soft);
+    color: #fff;
+    box-shadow: var(--shadow-soft);
+}
+
+.btn.primary:hover {
+    transform: translateY(-1px);
+    background: var(--accent-soft);
+}
+
+.btn.ghost {
+    background: rgba(0,0,0,0.25);
+    border-color: var(--border-soft);
+    color: var(--text);
+}
+
+.btn.ghost:hover {
+    transform: translateY(-1px);
+    border-color: var(--accent);
+}
+
+/* ===============================
+   CARRUSEL DINÁMICO (chips pill)
+=============================== */
+
+.hero-carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 8px 0;
+    margin-top: 18px;
+}
+
+.hero-carousel {
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.hero-carousel:active {
+    cursor: grabbing;
+}
+
+.hero-carousel-track {
+    display: inline-flex;
+    padding: 5px;
+    gap: 12px;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+.hero-chip {
+    font-size: 0.8rem;
+    border-radius: 999px;
+    padding: 6px 16px;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(3,4,10,0.8);
+    color: var(--muted);
+    opacity: 0.7;
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        opacity .25s ease,
+        transform .25s ease;
+    white-space: nowrap;
+}
+
+.hero-chip:hover {
+    opacity: 1;
+}
+
+.hero-chip.is-active {
+    opacity: 1;
+    background: rgba(66, 226, 184, 0.18);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+}
+
+/* ==========================
+      PANEL DINÁMICO
+========================== */
+
+.hero-panel-dynamic {
+    background: linear-gradient(135deg, rgba(10,12,28,0.98), rgba(15,18,40,0.98));
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 22px;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 260px;
+    transition: opacity .28s ease, transform .28s ease;
+}
+
+.hero-panel-dynamic.is-fading {
+    opacity: 0;
+    transform: translateY(4px);
+}
+
+.hero-panel-logo-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-panel-logo {
+    max-width: 200px;
+    max-height: 100px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 18px rgba(0,0,0,0.6));
+}
+
+.hero-panel-title {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.hero-panel-description {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.hero-panel-description p {
+    margin-bottom: 6px;
+}
+
+.hero-panel-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+.hero-panel-link::after {
+    content: "↗";
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+/* ==============================
+   BARRA DE PROGRESO DEL PANEL
+============================== */
+
+.hero-panel-progress {
+    width: 100%;
+    height: 3px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.hero-panel-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent), #ff79c6);
+    border-radius: 999px;
+    transform-origin: left;
+    transition: width 0ms;
+}
+
+/* ==========================
+      RESPONSIVE
+========================== */
+
+@media (max-width: 880px) {
+    .hero-inner {
+        grid-template-columns: minmax(0,1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding-top: calc(var(--header-h) + 24px);
+        padding-bottom: 72px;
+    }
+}

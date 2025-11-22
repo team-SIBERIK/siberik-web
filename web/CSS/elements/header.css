@@ -1,136 +1,157 @@
-header {
+/* HEADER */
+
+.sb-header {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--header-bg-color);
-    box-shadow: 0 1px 4px var(--shadow-color);
+    inset: 0 0 auto 0;
+    height: var(--header-h);
+    z-index: 40;
+    backdrop-filter: blur(16px);
+    background: linear-gradient(90deg, rgba(5,6,11,0.96), rgba(5,6,11,0.9));
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.sb-header-inner {
+    height: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    padding: 12px 5%;
-    z-index: 1000;
-    gap: 1rem;
-    height: 64px;
-    box-sizing: border-box;
+    gap: 16px;
 }
 
-/* LOGO */
-header .name {
+.sb-brand {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 14px;
+    text-decoration: none;
 }
 
-header .name img {
-    margin-top: 2px;
-    max-height: 30px;
+.sb-logo-mark {
+    height: 32px;
+    width: auto;
 }
 
-/* NAV */
-nav {
+.sb-logo-name {
+    height: 26px;
+    width: auto;
+}
+
+.sb-nav {
     display: flex;
-    gap: 20px;
-    flex-grow: 1;
-    justify-content: flex-end;
     align-items: center;
+    gap: 24px;
 }
 
-nav a {
+.nav-link {
     position: relative;
     text-decoration: none;
-    color: var(--text-primary-color);
-    font-weight: 500;
-    padding-bottom: 4px; /* espacio para la barrita */
-    transition: color 0.3s ease;
+    color: var(--muted);
+    font-size: 0.95rem;
+    padding-bottom: 4px;
+    transition: color .2s ease;
 }
 
-/* barrita de acento */
-nav a::after {
+.nav-link::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0%;
+    width: 0;
     height: 2px;
-    background-color: var(--accent-color);  /* <<--- esta era la pieza que faltaba */
-    transition: width 0.3s ease;
+    background: var(--accent);
+    transition: width .2s ease;
 }
 
-/* hover y enlace activo */
-nav a:hover,
-nav a.active {
-    color: var(--accent-color);
+.nav-link:hover {
+    color: var(--text);
 }
 
-nav a:hover::after,
-nav a.active::after {
+.nav-link:hover::after {
     width: 100%;
 }
 
-
-/* BURGER BUTTON */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: var(--text-primary-color);
+.sb-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.menu-toggle.open::before { content: "✕"; }
-.menu-toggle::before { content: "☰"; }
-
-/* THEME BUTTON */
 .theme-toggle {
-    background: none;
+    border-radius: 999px;
+    border: 1px solid var(--border-soft);
+    background: rgba(0,0,0,0.25);
+    padding: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.theme-toggle img {
+    width: 20px;
+    height: 20px;
+}
+
+.menu-toggle {
     border: none;
-    padding-top: 6px;
-    font-size: 1.4rem;
+    background: transparent;
+    width: 32px;
+    height: 32px;
+    display: none;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    margin-left: 1rem;
+    position: relative;
 }
 
-.theme-toggle img.theme-icon {
-    width: 24px;
-    height: 24px;
-    filter: drop-shadow(0 0 2px var(--shadow-color));
-    cursor: pointer;
+.menu-toggle span,
+.menu-toggle::before,
+.menu-toggle::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--text);
+    transition: transform .2s ease, opacity .2s ease;
 }
 
-/* MOBILE NAV */
-@media (max-width: 760px) {
-    .menu-toggle { display: block; }
+.menu-toggle::before {
+    transform: translateY(-5px);
+}
 
-    nav {
+.menu-toggle::after {
+    transform: translateY(5px);
+}
+
+.menu-toggle.open span {
+    opacity: 0;
+}
+
+.menu-toggle.open::before {
+    transform: translateY(0) rotate(45deg);
+}
+
+.menu-toggle.open::after {
+    transform: translateY(0) rotate(-45deg);
+}
+
+@media (max-width: 840px) {
+    .sb-nav {
+        position: absolute;
+        top: var(--header-h);
+        right: 0;
+        left: 0;
+        padding: 14px 20px 16px;
+        background: #05060b;
         display: none;
         flex-direction: column;
-        align-items: flex-start;
-        position: absolute;
-        padding-bottom: 10px;
-        top: 64px;
-        right: 5%;
-        width: 90%;
-        gap: 0px;
-        max-width: 300px;
-        background-color: var(--header-bg-color);
-        border: 1px solid var(--border-color);
-        border-radius: 10px;
-        box-shadow: 0 4px 10px var(--shadow-color);
-        animation: fadeIn 0.25s ease;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-
-    nav.show { display: flex; }
-
-    nav a {
-        width: 88%;
-        padding: 14px 18px;
-        border-bottom: 1px solid var(--border-color);
-        color: var(--text-primary-color);
+    .sb-nav.open {
+        display: flex;
     }
-
-    nav a:hover {
-        background-color: none;
+    .menu-toggle {
+        display: inline-flex;
     }
 }

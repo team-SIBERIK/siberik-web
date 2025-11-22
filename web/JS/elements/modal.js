@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll(".founder-btn");
+    const cards = document.querySelectorAll(".person-card");
     const fade = document.getElementById("fadeBackground");
 
-    buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const target = btn.getAttribute("data-target");
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            const target = card.getAttribute("data-modal");
             openModal(target);
         });
     });
@@ -14,12 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
 function openModal(id) {
     const modal = document.getElementById(id);
     const fade = document.getElementById("fadeBackground");
     modal.classList.add("show");
     fade.classList.add("show");
-    document.body.style.overflow = "hidden"; // 🚫 bloquea scroll de la página
+    document.body.style.overflow = "hidden"; // blocks page scroll
 }
 
 function closeModal(id) {
@@ -31,7 +32,7 @@ function closeModal(id) {
     setTimeout(() => {
         modal.classList.remove("show", "closing");
         fade.classList.remove("show", "closing");
-        document.body.style.overflow = ""; // ✅ reactiva scroll al cerrar
+        document.body.style.overflow = ""; // reactivates page scroll
     }, 400);
 }
 
@@ -45,6 +46,6 @@ function closeAllModals() {
     setTimeout(() => {
         document.querySelectorAll(".modal").forEach(modal => modal.classList.remove("show", "closing"));
         fade.classList.remove("show", "closing");
-        document.body.style.overflow = ""; // ✅ vuelve a permitir scroll
+        document.body.style.overflow = ""; // reactivates page scroll
     }, 400);
 }

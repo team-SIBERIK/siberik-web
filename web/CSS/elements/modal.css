@@ -31,25 +31,25 @@
     position: fixed;
     z-index: 10;
     left: 50%;
-    top: 370px;
+    top: 50%;
     transform: translate(-50%, -50%) scale(0.95);
 
-    background: var(--header-bg-color);
-    color: var(--text-primary-color);
+    background: var(--modal-bg);
+    color: var(--text);
 
     width: 90%;
     max-width: 500px;
-    max-height: 500px;
-
+    max-height: 80vh;
     overflow-y: auto;
 
-    border-radius: 16px;
-    box-shadow: 0 12px 40px var(--shadow-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
 
     opacity: 0;
     transition: opacity 0.4s ease, transform 0.4s ease;
-    -webkit-overflow-scrolling: touch;
 }
+
+
 
 .modal.show {
     display: block;
@@ -132,13 +132,14 @@
 
     background: linear-gradient(
         135deg,
-        var(--accent-color),
-        var(--accent-hover-color)
+        var(--accent-blue),
+        var(--accent-blue-soft)
     );
 
     border-radius: 12px 12px 0 0;
     margin-bottom: 60px;
 }
+
 
 /* Circular photo */
 .profile-pic {

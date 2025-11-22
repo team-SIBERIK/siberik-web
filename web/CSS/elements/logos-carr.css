@@ -1,0 +1,27 @@
+.ia-logos {
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+}
+
+.ia-logos-track {
+    display: inline-flex;
+    gap: 28px; 
+    white-space: nowrap;
+    will-change: transform;
+    align-items: center;
+    padding: 6px 0;
+}
+
+.ia-logo {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.85;
+    transition: transform .2s ease;
+}
+
+.ia-logo:hover {
+    transform: translateY(-2px);
+    opacity: 1;
+}
