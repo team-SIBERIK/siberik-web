@@ -1,20 +1,44 @@
 [
     {
-        "name": "SIBERIK Labs",
-        "description": "labs.html",
-        "icon": "web/assets/SIBERIK/SIBERIK_Labs.png",
-        "link": "https://labs.siberik.com"
-    },
-    {
         "name": "SIBERIK AI",
-        "description": "ai.html",
+        "unit_class": "unit-ai",
         "icon": "web/assets/SIBERIK/SIBERIK_AI.png",
+        "description": "ai.html",
+        "description_html": "Consultoría de inteligencia artificial, arquitectura cloud/on-premise, análisis de datos y automatización. Hogar del proyecto SIMA.",
+        "features": [
+            "Sistemas inteligentes a medida",
+            "Integración de IA generativa",
+            "Automatización de procesos"
+        ],
+        "status": "Sitio dedicado en preparación",
         "link": "https://ai.siberik.com"
     },
     {
         "name": "SIBERIK Studio",
-        "description": "studio.html",
+        "unit_class": "unit-studio",
         "icon": "web/assets/SIBERIK/SIBERIK_Studio.png",
+        "description": "studio.html",
+        "description_html": "Producción audiovisual, composición musical y desarrollo de videojuegos con una mirada artística y técnica a la vez.",
+        "features": [
+            "Bandas sonoras y diseño sonoro",
+            "Vídeos creativos y narrativos",
+            "Juegos indie"
+        ],
+        "status": "Preproducción de contenidos",
         "link": "https://studio.siberik.com"
+    },
+    {
+        "name": "SIBERIK Labs",
+        "unit_class": "unit-labs",
+        "icon": "web/assets/SIBERIK/SIBERIK_Labs.png",
+        "description": "labs.html",
+        "description_html": "Laboratorio donde volcamos contenido didáctico propio y de terceros, enlazado a repositorios oficiales de GitHub y recursos técnicos.",
+        "features": [
+            "Guías y tutoriales de IA y datos",
+            "Repositorios abiertos y documentación",
+            "Experimentos y proyectos de laboratorio"
+        ],
+        "status": "Lanzamiento progresivo",
+        "link": "https://labs.siberik.com"
     }
 ]
