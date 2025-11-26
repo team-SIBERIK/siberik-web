@@ -31,7 +31,7 @@
     position: fixed;
     z-index: 10;
     left: 50%;
-    top: 50%;
+    top: 405px;
     transform: translate(-50%, -50%) scale(0.95);
 
     background: var(--modal-bg);
@@ -39,7 +39,7 @@
 
     width: 90%;
     max-width: 500px;
-    max-height: 80vh;
+    max-height: 600px;
     overflow-y: auto;
 
     border-radius: var(--radius-lg);

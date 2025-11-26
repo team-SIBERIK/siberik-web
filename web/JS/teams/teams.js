@@ -1,40 +1,32 @@
-/* ============================================================
-   TEAMS MODULE - Dynamic Unit Cards Generator
-   ============================================================
-   Responsibilities:
-   - Load JSON team data
-   - Build "Units" section HTML dynamically
-   - Keep structure scalable and maintainable
-============================================================ */
+/**
+ * ===========================================================
+ *   TEAMS MODULE - Dynamic Unit Cards Generator
+ * ===========================================================
+ *   Responsibilities:
+ *   - Load JSON team data
+ *   - Build "Units" section HTML dynamically
+ *   - Keep structure scalable and maintainable
+ * ===========================================================
+ */
 
 class TeamsService {
-    /**
-     * Fetches JSON from a given URL.
-     */
     static async loadTeamsJSON(url) {
         const response = await fetch(url);
 
         if (!response.ok) {
             throw new Error(`Failed to load teams JSON from: ${url}`);
         }
-
         return await response.json();
     }
 }
 
 class UnitCardBuilder {
-    /**
-     * Builds a single <li> list item from feature text.
-     */
     static buildFeatureItem(text) {
         const li = document.createElement("li");
         li.textContent = text;
         return li;
     }
 
-    /**
-     * Builds the <ul> block from an array of features.
-     */
     static buildFeaturesList(features) {
         const ul = document.createElement("ul");
         ul.classList.add("unit-list");
@@ -47,13 +39,12 @@ class UnitCardBuilder {
     }
 
     /**
-     * Builds a full <article> card for a team unit.
+     * Inserts all core elements of the unit card, except CTA/footer.
      */
-    static buildUnitCard(unit) {
+    static buildUnitBase(unit) {
         const article = document.createElement("article");
         article.classList.add("unit-card");
 
-        // Optional custom class for styling (unit-ai, unit-studio, etc.)
         if (unit.unit_class) {
             article.classList.add(unit.unit_class);
         }
@@ -80,7 +71,22 @@ class UnitCardBuilder {
         // Features list
         const featuresList = UnitCardBuilder.buildFeaturesList(unit.features);
 
-        // CTA button (opens link in new tab)
+        // Append base content
+        article.appendChild(iconWrapper);
+        article.appendChild(title);
+        article.appendChild(desc);
+        article.appendChild(featuresList);
+
+        return article;
+    }
+
+    /**
+     * Build the footer (CTA button wrapped inside .unit-footer)
+     */
+    static buildFooter(unit) {
+        const footer = document.createElement("div");
+        footer.classList.add("unit-footer");
+
         const ctaButton = document.createElement("a");
         ctaButton.href = unit.link;
         ctaButton.target = "_blank";
@@ -88,20 +94,23 @@ class UnitCardBuilder {
         ctaButton.classList.add("unit-cta-button");
         ctaButton.textContent = "Visitar sitio";
 
-        article.appendChild(iconWrapper);
-        article.appendChild(title);
-        article.appendChild(desc);
-        article.appendChild(featuresList);
-        article.appendChild(ctaButton);
+        footer.appendChild(ctaButton);
+        return footer;
+    }
 
+    /**
+     * Full card assembly
+     */
+    static buildUnitCard(unit) {
+        const article = UnitCardBuilder.buildUnitBase(unit);
+        const footer = UnitCardBuilder.buildFooter(unit);
+
+        article.appendChild(footer);
         return article;
     }
 }
 
 class TeamsRenderer {
-    /**
-     * Renders all units into the grid container.
-     */
     static renderTeams(unitsData, containerSelector = ".units-grid") {
         const grid = document.querySelector(containerSelector);
 
@@ -110,7 +119,6 @@ class TeamsRenderer {
             return;
         }
 
-        // Clear previous content (in case of reload)
         grid.innerHTML = "";
 
         unitsData.forEach(unit => {
@@ -120,17 +128,12 @@ class TeamsRenderer {
     }
 }
 
-/* ============================================================
-   MAIN INITIALIZER
-============================================================ */
-
 (async function initTeamsSection() {
     try {
-        const jsonUrl = "web/JS/teams/teams.json"; // Adjust if needed
+        const jsonUrl = "web/JS/teams/teams.json";
         const unitsData = await TeamsService.loadTeamsJSON(jsonUrl);
 
         TeamsRenderer.renderTeams(unitsData);
-
     } catch (error) {
         console.error("Error loading teams:", error);
     }
