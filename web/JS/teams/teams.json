@@ -4,7 +4,7 @@
         "unit_class": "unit-ai",
         "icon": "web/assets/SIBERIK/SIBERIK_AI.png",
         "description": "ai.html",
-        "description_html": "Consultoría de inteligencia artificial, arquitectura cloud/on-premise, análisis de datos y automatización. Hogar del proyecto SIMA.",
+        "description_html": "Consultoría de inteligencia artificial, arquitectura cloud/on-premise, análisis de datos y automatización. Hogar del proyecto LYNX.",
         "features": [
             "Sistemas inteligentes a medida",
             "Integración de IA generativa",
