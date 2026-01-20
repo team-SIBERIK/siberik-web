@@ -115,9 +115,9 @@ body {
     border: 1px dashed rgba(255,255,255,0.2);
 }
 
-.unit-ai { border-top: 2px solid rgba(66,226,184,0.8); }
 .unit-studio { border-top: 2px solid rgba(255,106,166,0.85); }
-.unit-labs { border-top: 2px solid rgba(255,214,107,0.9); }
+.unit-hk { border-top: 2px solid rgba(255,214,107,0.9); }
+.unit-tech { border-top: 2px solid rgba(66,226,184,0.8); }
 
 @media (max-width: 960px) {
     .units-grid {
