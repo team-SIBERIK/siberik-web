@@ -1,19 +1,5 @@
 [
     {
-        "name": "SIBERIK AI",
-        "unit_class": "unit-ai",
-        "icon": "web/assets/SIBERIK/SIBERIK_AI.png",
-        "description": "ai.html",
-        "description_html": "Consultoría de inteligencia artificial, arquitectura cloud/on-premise, análisis de datos y automatización. Hogar del proyecto LYNX.",
-        "features": [
-            "Sistemas inteligentes a medida",
-            "Integración de IA generativa",
-            "Automatización de procesos"
-        ],
-        "status": "Sitio dedicado en preparación",
-        "link": "https://ai.siberik.com"
-    },
-    {
         "name": "SIBERIK Studio",
         "unit_class": "unit-studio",
         "icon": "web/assets/SIBERIK/SIBERIK_Studio.png",
@@ -28,17 +14,31 @@
         "link": "https://studio.siberik.com"
     },
     {
-        "name": "SIBERIK Labs",
-        "unit_class": "unit-labs",
-        "icon": "web/assets/SIBERIK/SIBERIK_Labs.png",
-        "description": "labs.html",
-        "description_html": "Laboratorio donde volcamos contenido didáctico propio y de terceros, enlazado a repositorios oficiales de GitHub y recursos técnicos.",
+        "name": "Human Kernel",
+        "unit_class": "unit-hk",
+        "icon": "web/assets/SIBERIK/SIBERIK_HK.png",
+        "description": "hk.html",
+        "description_html": "Canal donde volcamos contenido audiovisual didáctico propio y de terceros, enlazado a repositorios oficiales de GitHub y recursos técnicos.",
         "features": [
-            "Guías y tutoriales de IA y datos",
+            "Novedades de la actualidad tecnológica",
             "Repositorios abiertos y documentación",
             "Experimentos y proyectos de laboratorio"
         ],
         "status": "Lanzamiento progresivo",
         "link": "https://labs.siberik.com"
+    },
+    {
+        "name": "SIBERIK Tech",
+        "unit_class": "unit-tech",
+        "icon": "web/assets/SIBERIK/SIBERIK_Tech.png",
+        "description": "tech.html",
+        "description_html": "Equipo de desarrollo interno en proyectos de software e inteligencia artificial, arquitectura cloud/on-premise, análisis de datos y automatización. Hogar del proyecto LYNX.",
+        "features": [
+            "Sistemas inteligentes a medida",
+            "Integración de IA generativa",
+            "Automatización de procesos"
+        ],
+        "status": "Sitio dedicado en preparación",
+        "link": "https://tech.siberik.com"
     }
 ]
